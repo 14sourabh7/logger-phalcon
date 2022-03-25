@@ -77,8 +77,7 @@ class UserController extends Controller
                 $_POST = array();
                 return $response->redirect('/user');
             } else {
-
-                $message = implode($user->getMessages());
+                $message = implode(" & ", $user->getMessages());
                 $this->view->message = $message;
                 $logger->log('signup', $message);
             }
